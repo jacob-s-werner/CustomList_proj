@@ -52,5 +52,21 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Add_OneString_IndexMatchesName()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            string name = "Jake";
+            string expected = name;
+            string actual;
+
+            //Act
+            customList.Add(name);
+            actual = customList[0];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
