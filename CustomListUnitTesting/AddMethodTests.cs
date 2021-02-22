@@ -5,7 +5,7 @@ using CustomList;
 namespace CustomListUnitTesting
 {
     [TestClass]
-    public class AddMethodTest
+    public class AddMethodTests
     {
         [TestMethod]
         public void Add_OneString_ListAddedOneString()
