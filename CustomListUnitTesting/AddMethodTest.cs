@@ -68,5 +68,21 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Add_OneInteger_ListAddedInteger()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            int number = 7;
+            int expected = 1;
+            int actual;
+
+            //Act
+            customList.Add(number);
+            actual = customList.Count();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
