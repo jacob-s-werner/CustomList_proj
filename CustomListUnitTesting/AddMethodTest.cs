@@ -34,5 +34,23 @@ namespace CustomListUnitTesting
             //Act
             customList.Add(number);
         }
+        [TestMethod]
+        public void Add_TwoCharacters_ListAddedTwoCharacters()
+        {
+            //Arrange
+            CustomList<char> customList = new CustomList<char>();
+            char a = 'a';
+            char b = 'b';
+            int expected = 2;
+            int actual;
+
+            //Act
+            customList.Add(a);
+            customList.Add(b);
+            actual = customList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
