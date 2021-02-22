@@ -91,6 +91,10 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Remove_ReturnsNullList()
+        {
 
+        }
     }
 }

@@ -17,7 +17,13 @@ namespace CustomList
             get => _items[index];
             set => _items[index] = value;
         }
-
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
         public CustomList()
         {
             count = 0;
