@@ -24,17 +24,6 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        [ExpectedException(typeof(ArrayTypeMismatchException))]
-        public void Add_ArrayTypeMismatchExceptionThrown()
-        {
-            //Arrange
-            CustomList<string> customList = new CustomList<string>();
-            int number = 1;
-
-            //Act
-            customList.Add(number);
-        }
-        [TestMethod]
         public void Add_TwoCharacters_ListAddedTwoCharacters()
         {
             //Arrange
@@ -72,7 +61,7 @@ namespace CustomListUnitTesting
         public void Add_OneInteger_ListAddedInteger()
         {
             //Arrange
-            CustomList<string> customList = new CustomList<string>();
+            CustomList<int> customList = new CustomList<int>();
             int number = 7;
             int expected = 1;
             int actual;
@@ -83,6 +72,32 @@ namespace CustomListUnitTesting
 
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Add_FiveStrings_ListIndex2IsAddedProperly()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            string one = "One";
+            string two = "Two";
+            string three = "Three";
+            string four = "Four";
+            string five = "Five";
+            
+            string expected = three;
+            string actual;
+            
+            //Act
+            customList.Add(one);
+            customList.Add(two);
+            customList.Add(three);
+            customList.Add(four);
+            customList.Add(five);
+
+            actual = customList[2];
+            
+            //Assert
+            Assert.AreEqual(expected,actual);
         }
     }
 }
