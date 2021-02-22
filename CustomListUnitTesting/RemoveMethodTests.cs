@@ -16,8 +16,8 @@ namespace CustomListUnitTesting
             string two = "Two";
             string three = "Three";
 
-            string expected = 2;
-            string actual;
+            int expected = 2;
+            int actual;
 
             //Act
             customList.Add(one);
@@ -51,9 +51,22 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Remove_()
+        public void Remove_AddOneCharRemoveOneChar_CountIsZero()
         {
+            //Arrange
+            CustomList<char> customList = new CustomList<char>();
+            char a = 'a';
 
+            int expected = 0;
+            int actual;
+
+            //Act
+            customList.Add(a);
+            customList.Remove(a);
+            actual = customList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
         
     }
