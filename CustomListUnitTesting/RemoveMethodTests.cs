@@ -68,6 +68,29 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        
+        [TestMethod]
+        public void Remove_AddThreeStringsRemoveOne_PositionThreeStringIsNowInPositionTwo()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            string one = "One";
+            string two = "Two";
+            string three = "Three";
+
+            string expected = three;
+            string actual;
+
+            //Act
+            customList.Add(one);
+            customList.Add(two);
+            customList.Add(three);
+
+            customList.Remove(two);
+            actual = customList[2];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
