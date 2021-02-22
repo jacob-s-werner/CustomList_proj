@@ -8,9 +8,9 @@ namespace CustomList
 {
     public class CustomList<T>
     {
-        T[] _items;
-        int capacity;
-        int count;
+        private T[] _items;
+        private int capacity;
+        private int count;
         
         public CustomList()
         {
