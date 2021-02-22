@@ -18,15 +18,20 @@ namespace CustomList
             capacity = 0;
             _items = new T[capacity];
         }
-        public void Add(T variableToAdd)
+        public void Add(T itemToAdd)
         {
-            if (count == capacity)
+            if (capacity == 0)
+            {
+                capacity = 4;
+                _items = new T[capacity];
+            }
+            else if (count == capacity)
             {
                 capacity = capacity * 2;
                 _items = new T[capacity];
             }
 
-            _items[count] = variableToAdd;
+            _items[count] = itemToAdd;
             count++;
         }
 
