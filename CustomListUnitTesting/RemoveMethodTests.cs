@@ -8,7 +8,7 @@ namespace CustomListUnitTesting
     public class RemoveMethodTests
     {
         [TestMethod]
-        public void Remove_OneString_CountIsThree()
+        public void Remove_OneString_CountIsTwo()
         {
             //Arrange
             CustomList<string> customList = new CustomList<string>();
@@ -30,5 +30,26 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected,actual);
         }
+        [TestMethod]
+        public void Remove_OneInt_CheckIfDuplicateIsStillThere()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            
+            int expected = 2;
+            int actual;
+
+            //Act
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(2);
+
+            customList.Remove(2);
+            actual = customList.Count();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        
     }
 }
