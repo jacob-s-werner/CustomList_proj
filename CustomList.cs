@@ -11,7 +11,13 @@ namespace CustomList
         private T[] _items;
         private int capacity;
         private int count;
-        
+
+        public T this[int index]
+        {
+            get => _items[index];
+            set => _items[index] = value;
+        }
+
         public CustomList()
         {
             count = 0;
