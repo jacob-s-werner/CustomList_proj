@@ -23,5 +23,16 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        [ExpectedException(typeof(ArrayTypeMismatchException))]
+        public void Add_ArrayTypeMismatchExceptionThrown()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            int number = 1;
+
+            //Act
+            customList.Add(number);
+        }
     }
 }
