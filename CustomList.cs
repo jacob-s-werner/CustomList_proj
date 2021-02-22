@@ -8,10 +8,20 @@ namespace CustomList
 {
     public class CustomList<T>
     {
-
-        public void Add()
+        T[] customList;
+        int capacity;
+        int count;
+        
+        public CustomList()
         {
+            count = 0;
+            capacity = 0;
+            customList = new T[capacity];
 
+        }
+        public void Add(T variableToAdd)
+        {
+          
         }
 
         public void Remove()
