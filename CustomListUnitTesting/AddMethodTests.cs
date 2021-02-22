@@ -18,7 +18,7 @@ namespace CustomListUnitTesting
 
             //Act
             customList.Add(name);
-            actual = customList.Count();
+            actual = customList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -68,7 +68,7 @@ namespace CustomListUnitTesting
 
             //Act
             customList.Add(number);
-            actual = customList.Count();
+            actual = customList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);

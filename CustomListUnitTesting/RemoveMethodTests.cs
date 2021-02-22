@@ -25,7 +25,7 @@ namespace CustomListUnitTesting
             customList.Add(three);
 
             customList.Remove(two);
-            actual = customList.Count();
+            actual = customList.Count;
 
             //Assert
             Assert.AreEqual(expected,actual);
@@ -45,10 +45,15 @@ namespace CustomListUnitTesting
             customList.Add(2);
 
             customList.Remove(2);
-            actual = customList.Count();
+            actual = customList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_()
+        {
+
         }
         
     }
