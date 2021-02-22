@@ -28,14 +28,14 @@ namespace CustomListUnitTesting
             actual = customList.Count;
 
             //Assert
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void Remove_AddThreeIntegersRemoveOneDuplicate_CheckIfDuplicateIsStillThere()
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
-            
+
             int expected = 2;
             int actual;
 
