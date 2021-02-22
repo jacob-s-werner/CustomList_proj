@@ -8,7 +8,7 @@ namespace CustomList
 {
     public class CustomList<T>
     {
-        T[] customList;
+        T[] _items;
         int capacity;
         int count;
         
@@ -16,12 +16,18 @@ namespace CustomList
         {
             count = 0;
             capacity = 0;
-            customList = new T[capacity];
-
+            _items = new T[capacity];
         }
         public void Add(T variableToAdd)
         {
-          
+            if (count == capacity)
+            {
+                capacity = capacity * 2;
+                _items = new T[capacity];
+            }
+
+            _items[count] = variableToAdd;
+            count++;
         }
 
         public void Remove()
