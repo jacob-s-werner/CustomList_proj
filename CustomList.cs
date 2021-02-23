@@ -102,5 +102,10 @@ namespace CustomList
                 return removed;
             }
         }
+        //public override string ToString()
+        //{
+
+            
+        //}
     }
 }
