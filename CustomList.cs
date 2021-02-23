@@ -24,6 +24,13 @@ namespace CustomList
                 return count;
             }
         }
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+        }
         public CustomList()
         {
             count = 0;

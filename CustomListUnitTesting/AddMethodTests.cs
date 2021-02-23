@@ -99,5 +99,12 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected,actual);
         }
+        [TestMethod]
+        public void Add_FiveStrings_CapacityIsGreaterOrEqualToCount()
+        {
+            //Start here tomorrow
+        }
+        //Check for out of range exception
+        
     }
 }
