@@ -105,5 +105,32 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Remove_AddFiveStringsRemoveIndexOne_CheckIndexThree()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            string one = "One";
+            string two = "Two";
+            string three = "Three";
+            string four = "Four";
+            string five = "Five";
+
+            string expected = five;
+            string actual;
+
+            //Act
+            customList.Add(one);
+            customList.Add(two);
+            customList.Add(three);
+            customList.Add(four);
+            customList.Add(five);
+            customList.Remove(two);
+
+            actual = customList[3];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
