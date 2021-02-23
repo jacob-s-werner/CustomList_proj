@@ -67,9 +67,9 @@ namespace CustomList
             count++;
         }
 
-        public void Remove()
+        public bool Remove(T value) 
         {
-
+            
         }
     }
 }

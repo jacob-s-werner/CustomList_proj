@@ -86,22 +86,24 @@ namespace CustomListUnitTesting
             customList.Add(three);
 
             customList.Remove(two);
-            actual = customList[2];
+            actual = customList[1];
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Remove_OneChar_CustomListStaysNull()
+        public void Remove_OneChar_ReturnsFalse()
         {
             //Arrange
-            CustomList<string> customList = new CustomList<string>();
-
+            CustomList<char> customList = new CustomList<char>();
+            char c = 'c';
+            bool expected = false;
+            
             //Act
-            customList.Remove("nothing");
+            bool actual = customList.Remove(c);
 
             //Assert
-            Assert.IsNull(customList);
+            Assert.IsEqual(expected, actual);
         }
     }
 }
