@@ -86,7 +86,7 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void PlusOperator_OneShortListAndOneEmptyList_ListsAreAdded()
+        public void PlusOperator_OneShortCharListAndOneEmptyCharList_ListsAreAdded()
         {
             //Arrange
             CustomList<char> list = new CustomList<char>();
@@ -104,6 +104,36 @@ namespace CustomListUnitTesting
             list.Add('c');
 
             actual = list + empty;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void PlusOperator_OneShortCharListAndOneLongCharList_ListsAreAddedProperly()
+        {
+            //Arrange
+            CustomList<char> shortList = new CustomList<char>();
+            CustomList<char> longList = new CustomList<char>();
+            CustomList<char> expected = new CustomList<char>();
+            expected.Add('a');
+            expected.Add('b');
+            expected.Add('c');
+            expected.Add('d');
+            expected.Add('e');
+            expected.Add('f');
+
+            CustomList<char> actual;
+
+            //Act
+            shortList.Add('a');
+            shortList.Add('b');
+            
+            longList.Add('c');
+            longList.Add('d');
+            longList.Add('e');
+            longList.Add('f');
+
+            actual = shortList + longList;
 
             //Assert
             Assert.AreEqual(expected, actual);
