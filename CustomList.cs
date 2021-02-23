@@ -40,6 +40,7 @@ namespace CustomList
         public void Add(T itemToAdd)
         {
             T[] tempArray;
+            int tempCapacity = capacity;
             if (capacity == 0)
             {
                 capacity = 4;
@@ -49,7 +50,7 @@ namespace CustomList
             {
                 tempArray = new T[capacity];
                 
-                for (int i = 0; i < capacity; i++)
+                for (int i = 0; i < count; i++)
                 {
                     tempArray[i] = _items[i];
                 }
@@ -57,7 +58,7 @@ namespace CustomList
                 capacity *= 2;
                 _items = new T[capacity];
 
-                for (int i = 0; i < capacity; i++)
+                for (int i = 0; i < tempCapacity; i++)
                 {
                     _items[i] = tempArray[i];
                 }
@@ -69,18 +70,20 @@ namespace CustomList
         public bool Remove(T value) 
         {
             T[] tempArray = new T[capacity];
+            int tempIndex = 0;
             bool removed = false;
 
             for (int i = 0; i < capacity; i++)
             {
-                if (_items[i].Equals(value) && removed == true) //1, 3, 4, 3
+                if (removed == false && _items[i].Equals(value)) //1, 3, 4, 3
                 {
                     count--;
                     removed = true;
                 }
                 else
                 {
-                    tempArray[i] = _items[i];
+                    tempArray[tempIndex] = _items[i];
+                    tempIndex++;
                 }
             }
 
@@ -92,7 +95,7 @@ namespace CustomList
             {
                 _items = new T[capacity];
 
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < capacity; i++)
                 {
                     _items[i] = tempArray[i];
                 }
