@@ -100,9 +100,30 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected,actual);
         }
         [TestMethod]
-        public void Add_FiveStrings_CapacityIsGreaterOrEqualToCount()
+        public void Add_FiveStrings_CapacityIsEight()
         {
-            //Start here tomorrow
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            string one = "One";
+            string two = "Two";
+            string three = "Three";
+            string four = "Four";
+            string five = "Five";
+
+            int expected = 8;
+            int actual;
+
+            //Act
+            customList.Add(one);
+            customList.Add(two);
+            customList.Add(three);
+            customList.Add(four);
+            customList.Add(five);
+
+            actual = customList.Capacity;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
         //Check for out of range exception
         

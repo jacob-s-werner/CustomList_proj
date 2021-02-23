@@ -54,7 +54,7 @@ namespace CustomList
                     tempArray[i] = _items[i];
                 }
                 
-                capacity = capacity * 2;
+                capacity *= 2;
                 _items = new T[capacity];
 
                 for (int i = 0; i < count; i++)
