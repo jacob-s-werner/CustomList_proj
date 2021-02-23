@@ -50,5 +50,29 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void ToString_FourStringsOneChangedNull_ItemsAreCombinedIntoOneStringAndSkipNull()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            string string1 = "My";
+            string string2 = "Name";
+            string string3 = "Is";
+            string string4 = "Jeff";
+            string expected = "MyNameJeff";
+            string actual;
+
+            //Act
+            customList.Add(string1);
+            customList.Add(string2);
+            customList.Add(string3);
+            customList.Add(string4);
+            customList[2] = null;
+
+            actual = customList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
