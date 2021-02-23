@@ -58,5 +58,31 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void MinusOperator_TwoListsOfStrings_Index2MatchesExpected()
+        {
+            //Arrange
+            CustomList<string> one = new CustomList<string>();
+            CustomList<string> two = new CustomList<string>();
+            CustomList<string> result;
+            string expected = "Five";
+            string actual;
+
+            //Act
+            one.Add("One");
+            one.Add("Two");
+            one.Add("Three");
+            one.Add("Four");
+            one.Add("Five");
+
+            two.Add("Three");
+            two.Add("Four");
+
+            result = one - two;
+            actual = result[2];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
