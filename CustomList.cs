@@ -104,8 +104,29 @@ namespace CustomList
         }
         public override string ToString()
         {
+            string convertedString = "";
 
-
+            if (!_items.Equals(typeof(string)))
+            {
+                for (int i = 0; i < capacity; i++)
+                {
+                    if (_items[i] != null)
+                    {
+                        convertedString += Convert.ToString(_items[i]);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < capacity; i++)
+                {
+                    if (_items[i] != null)
+                    {
+                        convertedString += _items[i];
+                    }
+                }
+            }
+            return convertedString;
         }
     }
 }
