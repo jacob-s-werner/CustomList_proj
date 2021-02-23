@@ -30,5 +30,25 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected,actual);
         }
+        [TestMethod]
+        public void ToString_FourIntegers_ConvertedIntoOneString()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            
+            string expected = "1234";
+            string actual;
+
+            //Act
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
+            customList.Add(4);
+
+            actual = customList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
