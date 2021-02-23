@@ -92,9 +92,16 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Remove_ReturnsNullList()
+        public void Remove_OneChar_CustomListStaysNull()
         {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
 
+            //Act
+            customList.Remove("nothing");
+
+            //Assert
+            Assert.IsNull(customList);
         }
     }
 }
