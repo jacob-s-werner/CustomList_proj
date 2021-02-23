@@ -8,7 +8,7 @@ namespace CustomListUnitTesting
     public class PlusOperatorOverloadMethodTests
     {
         [TestMethod]
-        public void PlusOperator_TwoListsOfIntegers_CombinedTwoLists()
+        public void PlusOperator_TwoListsTotalingSixIntegers_CombinedTwoLists()
         {
             //Arrange
             CustomList<int> one = new CustomList<int>();
@@ -33,6 +33,31 @@ namespace CustomListUnitTesting
             two.Add(6);
 
             actual = one + two;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void PlusOperator_TwoListsOfIntegers_CountMatches6()
+        {
+            //Arrange
+            CustomList<int> one = new CustomList<int>();
+            CustomList<int> two = new CustomList<int>();
+            CustomList<int> result;
+            int expected = 6;
+            int actual;
+
+            //Act
+            one.Add(1);
+            one.Add(3);
+            one.Add(5);
+
+            two.Add(2);
+            two.Add(4);
+            two.Add(6);
+
+            result = one + two;
+            actual = result.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
