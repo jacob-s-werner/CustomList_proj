@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddMethodTests.cs" />
+    <Compile Include="MinusOperatorOverloadMethodTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveMethodTests.cs" />
     <Compile Include="ToStringMethodTest.cs" />
