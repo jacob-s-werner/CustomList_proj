@@ -134,5 +134,35 @@ namespace CustomListUnitTesting
             //Assert
             Assert.ReferenceEquals(expected, actual);
         }
+        [TestMethod]
+        public void MinusOperator_TwoIntegerListsOneWithDuplicate_RemovesOnlyOneDuplicateProperly()
+        {
+            //Arrange
+            CustomList<int> one = new CustomList<int>();
+            CustomList<int> two = new CustomList<int>();
+            CustomList<int> expected = new CustomList<int>();
+            expected.Add(1);
+            expected.Add(7);
+            expected.Add(9);
+            expected.Add(10);
+
+            CustomList<int> actual;
+
+            //Act
+            one.Add(1);
+            one.Add(1);
+            one.Add(7);
+            one.Add(9);
+            one.Add(10);
+
+            two.Add(1);
+            two.Add(2);
+            two.Add(3);
+
+            actual = one - two;
+
+            //Assert
+            Assert.ReferenceEquals(expected, actual);
+        }
     }
 }
