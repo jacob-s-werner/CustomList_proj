@@ -103,7 +103,7 @@ namespace CustomListUnitTesting
             bool actual = customList.Remove(c);
 
             //Assert
-            Assert.IsEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
