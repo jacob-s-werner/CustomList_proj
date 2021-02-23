@@ -125,7 +125,16 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        //Check for out of range exception
-        
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void Add_OneString_IndexOutOfRangeExceptionThrown()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            string one = "One";
+
+            //Act
+            customList[5] = one;
+        }
     }
 }
