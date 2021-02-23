@@ -107,5 +107,32 @@ namespace CustomListUnitTesting
             //Assert
             Assert.ReferenceEquals(expected, actual);
         }
+        [TestMethod]
+        public void MinusOperator_TwoCharListsNotMatching_ListIsNotSubtracted()
+        {
+            //Arrange
+            CustomList<char> charList1 = new CustomList<char>();
+            CustomList<char> charList2 = new CustomList<char>();
+            CustomList<char> expected = new CustomList<char>();
+            expected.Add('a');
+            expected.Add('b');
+            expected.Add('c');
+
+            CustomList<char> actual;
+
+            //Act
+            charList1.Add('a');
+            charList1.Add('b');
+            charList1.Add('c');
+
+            charList2.Add('d');
+            charList2.Add('e');
+            charList2.Add('f');
+
+            actual = charList1 - charList2;
+
+            //Assert
+            Assert.ReferenceEquals(expected, actual);
+        }
     }
 }
