@@ -35,7 +35,7 @@ namespace CustomListUnitTesting
             actual = one + two;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.ReferenceEquals(expected, actual);
         }
         [TestMethod]
         public void PlusOperator_TwoListsOfIntegers_CountMatches6()
@@ -106,7 +106,7 @@ namespace CustomListUnitTesting
             actual = list + empty;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.ReferenceEquals(expected, actual);
         }
         [TestMethod]
         public void PlusOperator_OneShortCharListAndOneLongCharList_ListsAreAddedProperly()
@@ -136,7 +136,7 @@ namespace CustomListUnitTesting
             actual = shortList + longList;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.ReferenceEquals(expected, actual);
         }
     }
 }

@@ -128,5 +128,18 @@ namespace CustomList
             }
             return convertedString;
         }
+        public static CustomList<T> operator + (CustomList<T> customList1, CustomList<T> customList2)
+        {
+            CustomList<T> combinedList = new CustomList<T>();
+            for (int i = 0; i < customList1.count; i++)
+            {
+                combinedList.Add(customList1[i]);
+            }
+            for (int i = 0; i < customList2.count; i++)
+            {
+                combinedList.Add(customList2[i]);
+            }
+            return combinedList;
+        }
     }
 }
