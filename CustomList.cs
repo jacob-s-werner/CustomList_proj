@@ -148,14 +148,13 @@ namespace CustomList
             {
                 subtractedList.Add(customList1[i]);
             }
-            for (int i = 0; i < subtractedList.count; i++)
+            for (int i = 0; i < customList2.count; i++)
             {
-                for (int i2 = 0; i2 < customList2.count; i2++)
+                for (int i2 = 0; i2 < subtractedList.count; i2++)
                 {
-                    if (subtractedList[i].Equals(customList2[i2]))
+                    if (subtractedList[i2].Equals(customList2[i]))
                     {
                         subtractedList.Remove(customList2[i2]);
-                        i--;
                         break;
                     }
                 }
