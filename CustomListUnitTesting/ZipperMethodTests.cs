@@ -108,5 +108,35 @@ namespace CustomListUnitTesting
             //Assert
             CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
+        [TestMethod]
+        public void Zipper_OneShortCharListAndOneLongCharList_ListZipperedProperly()
+        {
+            //Arrange
+            CustomList<char> shortList = new CustomList<char>();
+            CustomList<char> longList = new CustomList<char>();
+            CustomList<char> expected = new CustomList<char>();
+            expected.Add('a');
+            expected.Add('b');
+            expected.Add('c');
+            expected.Add('d');
+            expected.Add('e');
+            expected.Add('f');
+
+            CustomList<char> actual;
+
+            //Act
+            shortList.Add('a');
+            shortList.Add('c');
+
+            longList.Add('b');
+            longList.Add('d');
+            longList.Add('e');
+            longList.Add('f');
+
+            actual = shortList.Zipper(longList);
+
+            //Assert
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
+        }
     }
 }
