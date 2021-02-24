@@ -85,6 +85,28 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Zipper_OneCharListOneEmptyList_ListZipperedProperly()
+        {
+            //Arrange
+            CustomList<char> list = new CustomList<char>();
+            CustomList<char> empty = new CustomList<char>();
+            CustomList<char> expected = new CustomList<char>();
+            expected.Add('a');
+            expected.Add('b');
+            expected.Add('c');
 
+            CustomList<char> actual;
+
+            //Act
+            list.Add('a');
+            list.Add('b');
+            list.Add('c');
+
+            actual = list.Zipper(empty);
+
+            //Assert
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
+        }
     }
 }
