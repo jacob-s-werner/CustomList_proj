@@ -154,7 +154,7 @@ namespace CustomList
                 {
                     if (subtractedList[i2].Equals(customList2[i]))
                     {
-                        subtractedList.Remove(customList2[i2]);
+                        subtractedList.Remove(customList2[i]);
                         break;
                     }
                 }
