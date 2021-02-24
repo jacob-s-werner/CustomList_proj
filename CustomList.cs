@@ -161,5 +161,23 @@ namespace CustomList
             }
             return subtractedList;
         }
+        public CustomList<T> Zipper(CustomList<T> toZipper)
+        {
+            CustomList<T> zipperedList = new CustomList<T>();
+            int tempCount = count + toZipper.Count;
+
+            for (int i = 0; i < tempCount ; i++)
+            {
+                if (i < count)
+                {
+                    zipperedList.Add(_items[i]);
+                }
+                if (i < toZipper.Count)
+                {
+                    zipperedList.Add(toZipper[i]);
+                }
+            }
+            return zipperedList;
+        }
     }
 }
