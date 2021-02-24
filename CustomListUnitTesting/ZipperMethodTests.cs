@@ -62,5 +62,29 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Zipper_TwoListsFourStrings_Index3MatchesExpected()
+        {
+            //Arrange
+            CustomList<string> one = new CustomList<string>();
+            CustomList<string> two = new CustomList<string>();
+            CustomList<string> result;
+            string expected = "Four";
+            string actual;
+
+            //Act
+            one.Add("One");
+            one.Add("Three");
+
+            two.Add("Two");
+            two.Add("Four");
+
+            result = one.Zipper(two);
+            actual = result[3];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
