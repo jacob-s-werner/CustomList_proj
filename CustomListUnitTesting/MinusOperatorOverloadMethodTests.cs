@@ -5,7 +5,7 @@ using CustomList;
 namespace CustomListUnitTesting
 {
     [TestClass]
-    public class MinusOperatorOverloadMethodTests
+    public class MinusOperatorOverloadMethodTests : ExtraTestMethods
     {
         [TestMethod]
         public void MinusOperator_TwoListsTotalingSixIntegers_RemoveIntegersInSecondListFromFirstList()
@@ -31,7 +31,7 @@ namespace CustomListUnitTesting
             actual = one - two;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
         [TestMethod]
         public void MinusOperator_TwoListsTotalingSixIntegers_CountMatches2()
@@ -105,7 +105,7 @@ namespace CustomListUnitTesting
             actual = list - empty;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CheckIfTwoListsHaveIdenticalIndexes(expected,actual);
         }
         [TestMethod]
         public void MinusOperator_TwoCharListsNotMatching_ListIsNotSubtracted()
@@ -132,7 +132,7 @@ namespace CustomListUnitTesting
             actual = charList1 - charList2;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
         [TestMethod]
         public void MinusOperator_TwoIntegerListsOneWithDuplicate_RemovesOnlyOneDuplicateProperly()
@@ -162,7 +162,7 @@ namespace CustomListUnitTesting
             actual = one - two;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
         [TestMethod]
         public void MinusOperator_TwoIntegerListsBothWithDuplicates_RemovesBothDuplicatesProperly()
@@ -191,7 +191,7 @@ namespace CustomListUnitTesting
             actual = one - two;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
     }
 }

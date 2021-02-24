@@ -5,7 +5,7 @@ using CustomList;
 namespace CustomListUnitTesting
 {
     [TestClass]
-    public class PlusOperatorOverloadMethodTests
+    public class PlusOperatorOverloadMethodTests : ExtraTestMethods
     {
         [TestMethod]
         public void PlusOperator_TwoListsTotalingSixIntegers_CombinedTwoLists()
@@ -35,7 +35,7 @@ namespace CustomListUnitTesting
             actual = one + two;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
         [TestMethod]
         public void PlusOperator_TwoListsOfIntegers_CountMatches6()
@@ -106,7 +106,7 @@ namespace CustomListUnitTesting
             actual = list + empty;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
         [TestMethod]
         public void PlusOperator_OneShortCharListAndOneLongCharList_ListsAreAddedProperly()
@@ -136,7 +136,7 @@ namespace CustomListUnitTesting
             actual = shortList + longList;
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
     }
 }
