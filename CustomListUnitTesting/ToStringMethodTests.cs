@@ -5,7 +5,7 @@ using CustomList;
 namespace CustomListUnitTesting
 {
     [TestClass]
-    public class ToStringMethodTest
+    public class ToStringMethodTests
     {
         [TestMethod]
         public void ToString_FourStrings_ItemsAreCombinedIntoOneString()
