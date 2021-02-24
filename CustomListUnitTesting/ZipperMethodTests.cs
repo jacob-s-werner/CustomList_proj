@@ -37,5 +37,30 @@ namespace CustomListUnitTesting
             //Assert
             CheckIfTwoListsHaveIdenticalIndexes(expected, actual);
         }
+        [TestMethod]
+        public void Zipper_TwoListsSixIntegers_CountMatches6()
+        {
+            //Arrange
+            CustomList<int> one = new CustomList<int>();
+            CustomList<int> two = new CustomList<int>();
+            CustomList<int> result;
+            int expected = 6;
+            int actual;
+
+            //Act
+            one.Add(1);
+            one.Add(5);
+            one.Add(4);
+
+            two.Add(3);
+            two.Add(2);
+            two.Add(6);
+
+            result = one.Zipper(two);
+            actual = result.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
