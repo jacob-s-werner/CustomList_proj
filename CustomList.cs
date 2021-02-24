@@ -141,5 +141,26 @@ namespace CustomList
             }
             return combinedList;
         }
+        public static CustomList<T> operator - (CustomList<T> customList1, CustomList<T> customList2)
+        {
+            CustomList<T> subtractedList = new CustomList<T>();
+            for (int i = 0; i < customList1.count; i++)
+            {
+                subtractedList.Add(customList1[i]);
+            }
+            for (int i = 0; i < subtractedList.count; i++)
+            {
+                for (int i2 = 0; i2 < customList2.count; i2++)
+                {
+                    if (subtractedList[i].Equals(customList2[i2]))
+                    {
+                        subtractedList.Remove(customList2[i2]);
+                        i--;
+                        break;
+                    }
+                }
+            }
+            return subtractedList;
+        }
     }
 }
