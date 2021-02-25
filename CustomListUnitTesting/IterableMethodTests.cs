@@ -28,5 +28,22 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Iterable_OneEmptyList_NoIteration()
+        {
+            //Arrange
+            CustomList<int> intList = new CustomList<int>();
+            int expected = 0;
+            int actual = 0;
+
+            //Act
+            foreach (int item in intList)
+            {
+                actual++;
+            }
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
