@@ -95,5 +95,27 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Iterable_OneListOfFourInts_IntsAddedEquals10()
+        {
+            //Arrange
+            CustomList<int> intList = new CustomList<int>();
+            intList.Add(1);
+            intList.Add(2);
+            intList.Add(3);
+            intList.Add(4);
+
+            int expected = 10;
+            int actual = 0;
+
+            //Act
+            foreach (int integer in intList)
+            {
+                actual += integer;
+            }
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
