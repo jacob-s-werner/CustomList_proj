@@ -74,5 +74,26 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Iterable_OneShortListOfStrings_StringListMatchesExpected()
+        {
+            //Arrange
+            CustomList<string> stringList = new CustomList<string>();
+            stringList.Add("I");
+            stringList.Add("Am");
+            stringList.Add("Jake");
+
+            string expected = "IAmJake";
+            string actual = "";
+
+            //Act
+            foreach (string item in stringList)
+            {
+                actual += item;
+            }
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
