@@ -1,0 +1,51 @@
+CustomList<T> "-" operator overload Method
+
+Namespace: CustomList
+
+Definition:
+	Overrides the (-) operator to subtract one instance of a CustomList class from another instance of a CustomList class.
+
+-------------------------------------------------------------------------------------------------------
+C# syntax:
+	public static CustomList<T> operator - (CustomList<T> customList1, CustomList<T> customList2)
+-------------------------------------------------------------------------------------------------------
+Parameters:
+	CustomList<T> customList1
+		The CustomList that subtracts values. The value can be null.
+	CustomList<T> customList2
+		The CustomList that gets it's values subtracted. The value can be null.
+
+Returns:
+	CustomList<T>
+		CustomList<T> returns the new subtracted List. 
+		If customList2 is null it returns an unchanged copy of customList1.
+		
+Example:
+	The following example demonstrates how to subtract one CustomList<T> from another. 
+	Three CustomLists are created (listOne, listTwo, and result). The values 1, 1, and 5 are added to CustomList listOne.
+	The values 2, 1, and 6 are added to CustomList listTwo. CustomList listOne has each of it's indexes scanned for a matching value with CustomList listTwo,
+	if a match is found it removes that value. Since the first index 1 of listOne matches the second index 1 of listTwo, it is removed from the listOne. Because the value 1
+	was already removed from the first index, it is not removed again (duplicates aren't removed unless listTwo also has duplicates).
+	
+
+		//Creates two CustomLists
+		CustomList<int> one = new CustomList<int>();
+        	CustomList<int> two = new CustomList<int>();
+		CustomList<int> result;
+        
+		//Adds values to CustomList one and two
+		listOne.Add(1);
+        	listOne.Add(1);
+        	listOne.Add(5); //one looks like { 1, 1, 5 } 
+		
+       		listTwo.Add(2);
+        	listTwo.Add(1);
+        	listTwo.Add(6); //two looks like { 2, 1, 6 }
+
+        	result = listOne - listTwo; // result looks like { 1, 5 }
+
+Remarks:
+	To test the result there was a new Method in a TestClass, 
+	CheckIfTwoListsHaveIdenticalIndexes<T>(CustomList<T> expected, CustomList<T> actual)
+	Refer to CheckIFTwoListsHaveIdenticalIndexesDocumentation.txt file in this folder.
+       
