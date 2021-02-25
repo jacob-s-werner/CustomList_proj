@@ -3,40 +3,41 @@ CheckIfTwoListsHaveIdenticalIndexes<T>(CustomList<T>, CustomList<T>) Method
 Namespace: CustomListUnitTesting
 
 Definition:
-	
+	Compares two CustomList<T> and checks if the length and indexes are identical, the test will fail if not identical.	
 
 -------------------------------------------------------------------------------------------------------
 C# syntax:
-	public void CheckIfTwoListsHaveIdenticalIndexes<T>(CustomList<T> expected, CustomList<T> actual)
+	public void CheckIfTwoListsHaveIdenticalIndexes<T>(CustomList<T> customList1, CustomList<T> customList2)
 -------------------------------------------------------------------------------------------------------
 Parameters:
-	CustomList<T> expected
-		The CustomList that subtracts values. The value can be null.
-	CustomList<T> actual
-		The CustomList that gets it's values subtracted. The value can be null.
+	CustomList<T> customList1
+		CustomList that is compared to the second CustomList.
+	CustomList<T> customList2
+		CustomList that is compared to the first CustomList.
 
 Returns:
-	CustomList<T>
-		CustomList<T> returns the new subtracted List. 
-		If customList2 is null it returns an unchanged copy of customList1.
+	If both CustomLists are identical to each other the test passes, if they are not then it fails an Assert.AreEquals() check.
 		
 Example:
-	The following example demonstrates how to subtract one CustomList<T> from another. 
-	Three CustomLists are created (listOne, listTwo, and result). The values 1, 1, and 5 are added to CustomList listOne.
-	The values 2, 1, and 6 are added to CustomList listTwo. CustomList listOne has each of it's indexes scanned for a matching value with CustomList listTwo,
-	if a match is found it removes that value. Since the first index 1 of listOne matches the second index 1 of listTwo, it is removed from the listOne. Because the value 1
-	was already removed from the first index, it is not removed again (duplicates aren't removed unless listTwo also has duplicates).
-	
-
-		MinusOperatorOverloadMethodTests minusTests = new MinusOperatorOverloadMethodTests();
-            	CustomList<int> customList1 = new CustomList<int>();
+	The following example demonstrates how this method is used to check identical indexes in a CustomList.
+	Two CustomLists are created (customList1 and customList2). The value of 1 is addded to customList1.
+	The values 1, 1, and 1, are added to customList2. Both CustomLists are input into the method to test for identical indexes,
+	if the CustomList is not the same length or have the matching index the test will fail.
+		
+		// created a new instance customTest from the ExtraTestMethod Class
+		ExtraTestMethod customTest = new ExtraTestMethod(); 
+            	
+		// created two new CustomLists to be compared
+		CustomList<int> customList1 = new CustomList<int>();
             	CustomList<int> customList2 = new CustomList<int>();
 
-            	customList1.Add(1);
-            	customList2.Add(1);
-            	customList2.Add(1);
-            	customList2.Add(1);
+            	customList1.Add(1); // customList1 looks like { 1 }
 
-              	minusTests.CheckIfTwoListsHaveIdenticalIndexes(customList1, customList2);
+            	customList2.Add(1);
+            	customList2.Add(1);
+            	customList2.Add(1); // customList2 looks like { 1, 1, 1}
 
-Remarks:
+              	customTest.CheckIfTwoListsHaveIdenticalIndexes(customList1, customList2); // Test will fail
+
+Remarks: 
+	To be used in other tests, change the class ExtraTestMethod to a public abstract class that is inherited by the TestClass to use it. 

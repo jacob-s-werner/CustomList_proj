@@ -47,5 +47,5 @@ Example:
 Remarks:
 	To test the result there was a new Method in a TestClass, 
 	CheckIfTwoListsHaveIdenticalIndexes<T>(CustomList<T> expected, CustomList<T> actual)
-	Refer to CheckIFTwoListsHaveIdenticalIndexesDocumentation.txt file in this folder.
+	Refer to CheckIFTwoListsHaveIdenticalIndexes_Documentation.txt file in this folder.
        
