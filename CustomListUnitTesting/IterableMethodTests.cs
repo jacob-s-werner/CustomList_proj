@@ -58,7 +58,7 @@ namespace CustomListUnitTesting
             charList.Add('f');
 
             char expected = 'c';
-            char actual;
+            char actual = 'g';
             int iteration = 0;
 
             //Act
