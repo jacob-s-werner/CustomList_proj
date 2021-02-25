@@ -45,5 +45,34 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Iterable_OneLongList_CharMatchesExpected()
+        {
+            //Arrange
+            CustomList<char> charList = new CustomList<char>();
+            charList.Add('a');
+            charList.Add('b');
+            charList.Add('c');
+            charList.Add('d');
+            charList.Add('e');
+            charList.Add('f');
+
+            char expected = 'c';
+            char actual;
+            int iteration = 0;
+
+            //Act
+            foreach (char character in charList)
+            {
+                iteration++;
+                if (iteration == 3)
+                {
+                    actual = character;
+                }
+            }
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
