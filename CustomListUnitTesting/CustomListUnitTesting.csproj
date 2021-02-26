@@ -57,6 +57,7 @@
     <Compile Include="ToStringMethodTests.cs" />
     <Compile Include="PlusOperatorOverloadMethodTests.cs" />
     <Compile Include="IterableMethodTests.cs" />
+    <Compile Include="SortByShortestToLongestLengthMethodTests.cs" />
     <Compile Include="ZipperMethodTests.cs" />
   </ItemGroup>
   <ItemGroup>

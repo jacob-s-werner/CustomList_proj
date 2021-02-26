@@ -189,7 +189,27 @@ namespace CustomList
         }
         public CustomList<string> SortByShortestToLongestLength() //Converts CustomList<T> to a CustomList<string>, sorts it by shortest to longest length, then returns the sortedList
         {
-           
+            CustomList<string> stringList = new CustomList<string>();
+            CustomList<string> sortedList = new CustomList<string>();
+
+            for (int i = 0; i < count; i++)
+            {
+                if (_items[i] != null)
+                {
+                    stringList.Add(Convert.ToString(_items[i]));
+                }
+            }
+            for (int i = 0; i < stringList.Count; i++)
+            {
+                for (int j = 0; j < stringList.Count; j++)
+                {
+                    if (stringList[j].Length == i)
+                    {
+                        sortedList.Add(stringList[j]);
+                    }
+                }
+            }
+            return sortedList;
         }
     }
 }
