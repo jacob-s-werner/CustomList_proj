@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class CustomList<T> : IEnumerable, ISorter<T>
+    public class CustomList<T> : IEnumerable, IStringSorter
     {
         private T[] _items;
         private int capacity;
