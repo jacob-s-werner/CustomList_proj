@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    interface IStringSorter
+    public interface IStringSorter
     {
-        void SortByShortestToLongestLength();
+        CustomList<string> SortByShortestToLongestLength();
     }
 }

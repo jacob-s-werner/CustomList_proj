@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class CustomList<T> : IEnumerable
+    public class CustomList<T> : IEnumerable, ISorter<T>
     {
         private T[] _items;
         private int capacity;
@@ -186,6 +186,10 @@ namespace CustomList
             {
                 yield return _items[i];
             }
+        }
+        public CustomList<string> SortByShortestToLongestLength() //Converts CustomList<T> to a CustomList<string>, sorts it by shortest to longest length, then returns the sortedList
+        {
+           
         }
     }
 }
